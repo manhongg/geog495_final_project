@@ -208,633 +208,194 @@
         style: 'mapbox://styles/mapbox/light-v10',
         center: [-122.335167, 47.608013],
         zoom: 13,
-        scrollZoom: false
+        scrollZoom: true
       });
 
-      const stores = {
-        'type': 'featureCollection',
-          'features': [
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.3560320423, 47.7230041734274]
-                },
-                'properties': {
-                    'OBJECTID': 1,
-                    'name': 'BROADWAY',
-                    'address': '12755 GREENWOOD AV N',
-                    'label': 'Broadway',
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.298087010456, 47.719861028134]
-                
-                },
-                'properties': {
-                    'OBJECTID': 2,
-                    'name': 'Lake City',
-                    'address': '12501 28TH AV NE',
-                    'label': 'Lake City'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.401343582302, 47.6337812967029]
-                
-                },
-                'properties': {
-                    'OBJECTID': 3,
-                    'name': 'MAGNOLIA',
-                    'address': '2801 34TH AV W',
-                    'label': 'Broadway'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.362744475846, 47.7230041734274]
-                },
-                'properties': {
-                    'OBJECTID': 4,
-                    'name': 'QUEEN ANNE',
-                    'address': '400 W GARFIELD ST',
-                    'label': 'Queen Anne'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.348399923651, 47.6500678948937]
-                
-                },
-                'properties': {
-                    'OBJECTID': 5,
-                    'name': 'FREMONT',
-                    'address': '731 N 35TH ST',
-                    'label': 'Fremont'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.326716739666, 47.6815007844833]
-                
-                },
-                'properties': {
-                    'OBJECTID': 6,
-                    'name': 'GREEN LAKE',
-                    'address': '7364 E GREEN LAKE DR N',
-                    'label': 'Green Lake'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.354964535598, 47.6874970562586]
-                
-                },
-                'properties': {
-                    'OBJECTID': 7,
-                    'name': 'GREENWOOD',
-                    'address': '8016 GREENWOOD AV N',
-                    'label': 'Greenwood'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.317868191895, 47.6652361899239]
-                
-                },
-                'properties': {
-                    'OBJECTID': 8,
-                    'name': 'UNIVERSITY',
-                    'address': '5009 ROOSEVELT WY NE',
-                    'label': 'University'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.290014064851, 47.6126741851108]
-                
-                },
-                'properties': {
-                    'OBJECTID': 9,
-                    'name': 'MADRONA-SALLY GOLDMARK',
-                    'address': '1134 33RD AV',
-                    'label': 'Madrona-Sally Goldmark'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.302393902757, 47.6405657184819]
-                
-                },
-                'properties': {
-                    'OBJECTID': 10,
-                    'name': 'MONTLAKE',
-                    'address': '2401 24TH AV E',
-                    'label': 'Montlake'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.290711288702, 47.6778536840027]
-                
-                },
-                'properties': {
-                    'OBJECTID': 11,
-                    'name': 'NORTHEAST',
-                    'address': '6801 35TH AV NE',
-                    'label': 'Northeast'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.376182399068, 47.5224417730778]
-                
-                },
-                'properties': {
-                    'OBJECTID': 12, 
-                    'name': 'SOUTHWEST',
-                    'address': '9010 35TH AV SW',
-                    'label': 'Southwest'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.384757452724, 47.5826948361101]
-                
-                },
-                'properties': {
-                    'OBJECTID': 13, 
-                    'name': 'WEST SEATTLE',
-                    'address': '2306 42ND AV SW',
-                    'label': 'West Seattle'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.311407090967, 47.578045899061]
-                
-                },
-                'properties': {
-                    'OBJECTID': 14, 
-                    'name': 'BEACON HILL',
-                    'address': '2821 BEACON AV S',
-                    'label': 'Beacon Hill'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.286879244797, 47.5599471687359]
-                
-                },
-                'properties': {
-                    'OBJECTID': 15,
-                    'name': 'COLUMBIA',
-                    'address': '4721 RAINIER AV S',
-                    'label': 'Columbia'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.27046511644, 47.5213562310506]
-                
-                },
-                'properties': {
-                    'OBJECTID': 16,
-                    'name': 'RAINIER BEACH',
-                    'address': '9125 RAINIER AV S',
-                    'label': 'Rainier Beach'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.336823478051, 47.6166799315974]
-                
-                },
-                'properties': {
-                    'OBJECTID': 17,
-                    'name': 'TALKING BOOK & BRAILLE',
-                    'address': '2021 9TH AV',
-                    'label': 'Talking Book & Braille'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.339104421204, 47.661173686016]
-                
-                },
-                'properties': {
-                    'OBJECTID': 18,
-                    'name': 'WALLINGFORD',
-                    'address': '1501 N 45TH ST',
-                    'label': 'Wallingford'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.301831580483, 47.6019032112493]
-                
-                },
-                'properties': {
-                    'OBJECTID': 19,
-                    'name': 'DOUGLASS-TRUTH',
-                    'address': '2300 E YESLER WAY',
-                    'label': 'Douglass-Truth'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.322451451691, 47.6229139792733]
-                
-                },
-                'properties': {
-                    'OBJECTID': 20,
-                    'name': 'CAPITOL HILL',
-                    'address': '425 HARVARD AV E',
-                    'label': 'Capitol Hill'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.290951178993, 47.5389938028283]
-                
-                },
-                'properties': {
-                    'OBJECTID': 21,
-                    'name': 'NEWHOLLY',
-                    'address': '7058 32ND AV S',
-                    'label': 'NewHolly'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.375813894142, 47.5480415683761]
-                
-                },
-                'properties': {
-                    'OBJECTID': 22,
-                    'name': 'HIGH POINT',
-                    'address': '3411 SW RAYMOND ST',
-                    'label': 'High Point'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.332968268869, 47.6064852814312]
-                
-                },
-                'properties': {
-                    'OBJECTID': 23,
-                    'name': 'CENTRAL',
-                    'address': '1000 4TH AV',
-                    'label': 'Central'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.363318628013, 47.553047395711]
-                
-                },
-                'properties': {
-                    'OBJECTID': 24,
-                    'name': 'DELRIDGE',
-                    'address': '5423 DELRIDGE WAY SW',
-                    'label': 'Delridge'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.322677488722, 47.7061932792133]
-                
-                },
-                'properties': {
-                    'OBJECTID': 25,
-                    'name': 'NORTHGATE',
-                    'address': '10548 5TH AV NE',
-                    'label': 'Northgate'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.33702477927, 47.6168038744594]
-                
-                },
-                'properties': {
-                    'OBJECTID': 26,
-                    'name': 'MOBILE SERVICES',
-                    'address': '2025 9TH AV',
-                    'label': ''
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.322834230785, 47.5962491239783]
-                
-                },
-                'properties': {
-                    'OBJECTID': 27, 
-                    'name': 'INTL. DISTRICT / CHINATOWN',
-                    'address': '713 8TH AV S',
-                    'label': 'Intl District / Chinatown'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.384203803541, 47.6698432030019]
-                
-                },
-                'properties': {
-                    'OBJECTID': 28,
-                    'name': 'BALLARD',
-                    'address': '5614 22ND AV NW',
-                    'label': 'Ballard'
-                }
-              },
-              {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-122.322591182375, 47.5262651631218]
-                
-                },
-                'properties': {
-                    'OBJECTID': 29,
-                    'name': 'SOUTH PARK',
-                    'address': '8604 8TH AV S',
-                    'label': 'South Park'
-                }
-              }
-          ]
-      };
-
-
-      stores.features.forEach((store, i) => {
-        store.properties.id = i;
-      });
-
-
-      map.on('load', () => {
-
-        map.addSource('places', {
-          'type': 'geojson',
-          'data': stores
+      async function geojsonFetch() {
+            let response = await fetch('assets/data.geojson');
+            let libraries = await response.json();
+        libraries.features.forEach(function (library, i) {
+            library.properties.id = i;
         });
 
+        map.on('load', () => {
 
-        const geocoder = new MapboxGeocoder({
-          accessToken: mapboxgl.accessToken,
-          mapboxgl: mapboxgl,
-          marker: true,
-          bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
-        });
+            map.addSource('data', {
+            'type': 'geojson',
+            'data': data
+            });
 
-        buildLocationList(stores);
-        map.addControl(geocoder, 'top-left');
-        addMarkers();
+            const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            marker: true,
+            bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
+            });
+            buildLocationList(libraries);
+            map.addControl(geocoder, 'top-left');
+            addMarkers();
+            geocoder.on('result', (event) => {
+            const searchResult = event.result.geometry;
 
-        geocoder.on('result', (event) => {
-          /* Get the coordinate of the search result */
-          const searchResult = event.result.geometry;
+            const options = { units: 'miles' };
+            for (const library of libraries.features) {
+                library.properties.distance = turf.distance(
+                searchResult,
+                library.geometry,
+                options
+                );
+            }
+/**
+            libraries.features.sort((a, b) => {
+                if (a.properties.distance > b.properties.distance) {
+                return 1;
+                }
+                if (a.properties.distance < b.properties.distance) {
+                return -1;
+                }
+                return 0; // a must be equal to b
+            });
+**/
+            const listings = document.getElementById('listings');
+            while (listings.firstChild) {
+                listings.removeChild(listings.firstChild);
+            }
+            buildLocationList(libraries);
+            createPopUp(libraries.features[0]);
 
-
-          const options = { units: 'miles' };
-          for (const store of stores.features) {
-            store.properties.distance = turf.distance(
-              searchResult,
-              store.geometry,
-              options
+            const activeListing = document.getElementById(
+                `listing-${libraries.features[0].properties.id}`
             );
-          }
+            activeListing.classList.add('active');
 
-          stores.features.sort((a, b) => {
-            if (a.properties.distance > b.properties.distance) {
-              return 1;
+            const bbox = getBbox(libraries, 0, searchResult);
+            map.fitBounds(bbox, {
+                padding: 100
+            });
+            });
+        });
+
+        function getBbox(sortedLibraries, storeIdentifier, searchResult) {
+            const lats = [
+            sortedLibraries.features[libraryIdentifier].geometry.coordinates[1],
+            searchResult.coordinates[1]
+            ];
+            const lons = [
+            sortedLibraries.features[libraryIdentifier].geometry.coordinates[0],
+            searchResult.coordinates[0]
+            ];
+            const sortedLons = lons.sort((a, b) => {
+            if (a > b) {
+                return 1;
             }
-            if (a.properties.distance < b.properties.distance) {
-              return -1;
+            if (a.distance < b.distance) {
+                return -1;
             }
-            return 0; // a must be equal to b
-          });
+            return 0;
+            });
+            const sortedLats = lats.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            }
+            if (a.distance < b.distance) {
+                return -1;
+            }
+            return 0;
+            });
+            return [
+            [sortedLons[0], sortedLats[0]],
+            [sortedLons[1], sortedLats[1]]
+            ];
+        }
 
-          const listings = document.getElementById('listings');
-          while (listings.firstChild) {
-            listings.removeChild(listings.firstChild);
-          }
-          buildLocationList(stores);
+        function addMarkers() {
+            for (const marker of libraries.features) {
+            const el = document.createElement('div');
+            el.id = `marker-${marker.properties.id}`;
+            el.className = 'marker';
 
-          /* Open a popup for the closest store. */
-          createPopUp(stores.features[0]);
+            new mapboxgl.Marker(el, { offset: [0, -23] })
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map);
 
-          /** Highlight the listing for the closest store. */
-          const activeListing = document.getElementById(
-            `listing-${stores.features[0].properties.id}`
-          );
-          activeListing.classList.add('active');
+            el.addEventListener('click', (e) => {
+                flyToLibrary(marker);
+                createPopUp(marker);
+                const activeItem = document.getElementsByClassName('active');
+                e.stopPropagation();
+                if (activeItem[0]) {
+                activeItem[0].classList.remove('active');
+                }
+                const listing = document.getElementById(
+                `listing-${marker.properties.id}`
+                );
+                listing.classList.add('active');
+            });
+            }
+        }
 
-          /**
-           * Adjust the map camera:
-           * Get a bbox that contains both the geocoder result and
-           * the closest store. Fit the bounds to that bbox.
-           */
-          const bbox = getBbox(stores, 0, searchResult);
-          map.fitBounds(bbox, {
-            padding: 100
-          });
-        });
-      });
+        function buildLocationList(libraries) {
+            for (const library of libraries.features) {
+            const listings = document.getElementById('listings');
+            const listing = listings.appendChild(document.createElement('div'));
+            listing.id = `listing-${library.properties.id}`;
+            listing.className = 'item';
 
-      function getBbox(sortedStores, storeIdentifier, searchResult) {
-        const lats = [
-          sortedStores.features[storeIdentifier].geometry.coordinates[1],
-          searchResult.coordinates[1]
-        ];
-        const lons = [
-          sortedStores.features[storeIdentifier].geometry.coordinates[0],
-          searchResult.coordinates[0]
-        ];
-        const sortedLons = lons.sort((a, b) => {
-          if (a > b) {
-            return 1;
-          }
-          if (a.distance < b.distance) {
-            return -1;
-          }
-          return 0;
-        });
-        const sortedLats = lats.sort((a, b) => {
-          if (a > b) {
-            return 1;
-          }
-          if (a.distance < b.distance) {
-            return -1;
-          }
-          return 0;
-        });
-        return [
-          [sortedLons[0], sortedLats[0]],
-          [sortedLons[1], sortedLats[1]]
-        ];
-      }
+            const link = listing.appendChild(document.createElement('a'));
+            link.href = '#';
+            link.className = 'title';
+            link.id = `link-${library.properties.id}`;
+            link.innerHTML = `${library.properties.address}`;
 
-      /**
-       * Add a marker to the map for every store listing.
-       **/
-      function addMarkers() {
-        /* For each feature in the GeoJSON object above: */
-        for (const marker of stores.features) {
-          /* Create a div element for the marker. */
-          const el = document.createElement('div');
-          /* Assign a unique `id` to the marker. */
-          el.id = `marker-${marker.properties.id}`;
-          /* Assign the `marker` class to each marker for styling. */
-          el.className = 'marker';
+            const details = listing.appendChild(document.createElement('div'));
+            details.innerHTML = `${library.properties.label}`;
+          /**  if (library.properties.distance) {
+                const roundedDistance =
+                Math.round(library.properties.distance * 100) / 100;
+                details.innerHTML += `<div><strong>${roundedDistance} miles away</strong></div>`;
+            }
+**/
+            /**
+             * Listen to the element and when it is clicked, do four things:
+             * 1. Update the `currentFeature` to the store associated with the clicked link
+             * 2. Fly to the point
+             * 3. Close all other popups and display popup for clicked store
+             * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+             **/
+            link.addEventListener('click', function () {
+                for (const feature of libraries.features) {
+                if (this.id === `link-${feature.properties.id}`) {
+                    flyToLibrary(feature);
+                    createPopUp(feature);
+                }
+                }
+                const activeItem = document.getElementsByClassName('active');
+                if (activeItem[0]) {
+                activeItem[0].classList.remove('active');
+                }
+                this.parentNode.classList.add('active');
+            });
+            }
+        }
 
+        function flyToLibrary(currentFeature) {
+            map.flyTo({
+            center: currentFeature.geometry.coordinates,
+            zoom: 15
+            });
+        }
 
-          new mapboxgl.Marker(el, { offset: [0, -23] })
-            .setLngLat(marker.geometry.coordinates)
+        function createPopUp(currentFeature) {
+            const popUps = document.getElementsByClassName('mapboxgl-popup');
+            if (popUps[0]) popUps[0].remove();
+            const popup = new mapboxgl.Popup({ closeOnClick: true })
+            .setLngLat(currentFeature.geometry.coordinates)
+            .setHTML(
+                `<h3>Seattle Public library</h3><h4>${currentFeature.properties.address}</h4>`
+            )
             .addTo(map);
-
-          el.addEventListener('click', (e) => {
-            flyToStore(marker);
-            createPopUp(marker);
-            const activeItem = document.getElementsByClassName('active');
-            e.stopPropagation();
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            const listing = document.getElementById(
-              `listing-${marker.properties.id}`
-            );
-            listing.classList.add('active');
-          });
         }
-      }
-
-      /**
-       * Add a listing for each store to the sidebar.
-       **/
-      function buildLocationList(stores) {
-        for (const store of stores.features) {
-          /* Add a new listing section to the sidebar. */
-          const listings = document.getElementById('listings');
-          const listing = listings.appendChild(document.createElement('div'));
-          /* Assign a unique `id` to the listing. */
-          listing.id = `listing-${store.properties.id}`;
-          /* Assign the `item` class to each listing for styling. */
-          listing.className = 'item';
-
-          /* Add the link to the individual listing created above. */
-          const link = listing.appendChild(document.createElement('a'));
-          link.href = '#';
-          link.className = 'title';
-          link.id = `link-${store.properties.id}`;
-          link.innerHTML = `${store.properties.address}`;
-
-          /* Add details to the individual listing. */
-          const details = listing.appendChild(document.createElement('div'));
-          details.innerHTML = `${store.properties.label}`;
-          if (store.properties.distance) {
-            const roundedDistance =
-              Math.round(store.properties.distance * 100) / 100;
-            details.innerHTML += `<div><strong>${roundedDistance} miles away</strong></div>`;
-          }
-
-          /**
-           * Listen to the element and when it is clicked, do four things:
-           * 1. Update the `currentFeature` to the store associated with the clicked link
-           * 2. Fly to the point
-           * 3. Close all other popups and display popup for clicked store
-           * 4. Highlight listing in sidebar (and remove highlight for all other listings)
-           **/
-          link.addEventListener('click', function () {
-            for (const feature of stores.features) {
-              if (this.id === `link-${feature.properties.id}`) {
-                flyToStore(feature);
-                createPopUp(feature);
-              }
-            }
-            const activeItem = document.getElementsByClassName('active');
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            this.parentNode.classList.add('active');
-          });
-        }
-      }
-
-      function flyToStore(currentFeature) {
-        map.flyTo({
-          center: currentFeature.geometry.coordinates,
-          zoom: 15
-        });
-      }
-
-      function createPopUp(currentFeature) {
-        const popUps = document.getElementsByClassName('mapboxgl-popup');
-        if (popUps[0]) popUps[0].remove();
-
-        const popup = new mapboxgl.Popup({ closeOnClick: false })
-          .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML(
-            `<h3>Seattle Public library</h3><h4>${currentFeature.properties.address}</h4>`
-          )
-          .addTo(map);
-      }
+      geojsonFetch(); 
     </script>
   </body>
 </html>
-
