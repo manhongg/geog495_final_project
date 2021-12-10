@@ -1,6 +1,6 @@
 # <h1>Seattle Public Libraries</h1>
 
-<h2>[Link to project](https://manhongg.github.io/geog495_final_project/)</h2>
+<h2>[Link to project]</h2>(https://manhongg.github.io/geog495_final_project/)
 
 <h2>Project Description</h2>
 
