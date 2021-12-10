@@ -1,6 +1,6 @@
 # <h1>Seattle Public Libraries</h1>
 
-[Link to project](https://manhongg.github.io/geog495_final_project/)
+<h2>[Link to project](https://manhongg.github.io/geog495_final_project/)</h2>
 
 <h2>Project Description</h2>
 
@@ -34,7 +34,7 @@ My project repository is hosted on Github.
 
 My web application was based on this template: https://docs.mapbox.com/help/tutorials/building-a-store-locator/
 
-Applied libraries: Mapbox gl js
+API references: Mapbox GL JS
 
 Mapbox style: https://www.mapbox.com/maps/dark
 
