@@ -19,12 +19,15 @@ My data for this project was sourced from Seattle Geodata, an open source
 
 Screenshots
 
+
+
 <h3>Main Functions</h3>
 
 buildLocationList()
 
 This function creates the sidebar display of all oublic libraries and their locations by 
 
+<img width="1177" alt="web_application" src="https://user-images.githubusercontent.com/43800949/145516935-387662e1-e8f8-44d1-8455-ab616761e10e.png">
 
 
 
