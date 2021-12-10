@@ -4,7 +4,7 @@
 
 <h2>Project Description</h2>
 
-My web application uses geodata from the City of Seattle GIS program that provides a comprehensive list of all Seattle public libraries to map and display the geographic locations of public libraries throughout the city. The map uses visual markers indicating the apporximate locations of each libraries, and allows users to click on the icon to zoom in closer to the locations of libraries in various neighborhoods around the City of seattle. The markers display information on the sidebar and in popup boxes stating the location and address of each library, allowing users to reference which neighborhoods have public libraries and how far they are from the user.
+My web application uses geodata from the City of Seattle GIS program that provides a comprehensive list of all Seattle public libraries to map and display the geographic locations of public libraries throughout the city. The map uses visual markers indicating the apporximate locations of each libraries, and allows users to click on the icon to zoom in closer to the locations of libraries in various neighborhoods around the City of seattle. The markers display information on the sidebar and in popup boxes stating the location and address of each library, allowing users to reference which neighborhoods have public libraries and how far they are from the user. The web application allows users to locate and browse all Seattle Public Libraries, indicating their locations and distance from the user’s current location using markers. 
 
 <h2>Project Goal</h2>
 
@@ -16,18 +16,17 @@ For people and households that depend on public libraries or frequently visit th
 
 <h3>Main Functions</h3>
 
+**geojsonFetch()**
+This function retreives the location data from a geojson file in the assets folder of my repository, and stores the information for future use in my web map and populates the sidebar display and popup boxes with the appropriate data. 
 
+**buildLocationList()**
 
-buildLocationList()
-
-This function creates the sidebar display of all oublic libraries and their locations by 
+This function creates the sidebar display detailing all public libraries and their locations, adding an event listener to implement inetratcive features when the user clicks on a marker or popup display. 
 
 <img width="1177" alt="web_application" src="https://user-images.githubusercontent.com/43800949/145516935-387662e1-e8f8-44d1-8455-ab616761e10e.png">
 
 
-My data for this project was sourced from Seattle Geodata, an open source 
-
-The web application allows users to locate and browse all Seattle Public Libraries, indicating their locations and distance from the user’s current location using markers. When clicked on, the markers will bring the user to the exact, zoomed-in location of the specified library, along with the address and name of the respective location. There is also a search bar that allows the user to 
+Link to dataset: https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::seattle-public-libraries/about
 
 
 ![image](https://user-images.githubusercontent.com/43800949/145508673-56390f3f-965b-4e40-955d-4c56d6158d0c.png)
