@@ -1,0 +1,409 @@
+{"type": "featureCollection",
+          "features": [
+              {"type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.3560320423, 47.7230041734274]
+                },
+                "properties": {
+                    "OBJECTID": 1,
+                    "name": "BROADWAY",
+                    "address": "12755 GREENWOOD AV N",
+                    "label": "Broadway"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.298087010456, 47.719861028134]
+                
+                },
+                "properties": {
+                    "OBJECTID": 2,
+                    "name": "Lake City",
+                    "address": "12501 28TH AV NE",
+                    "label": "Lake City"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.401343582302, 47.6337812967029]
+                
+                },
+                "properties": {
+                    "OBJECTID": 3,
+                    "name": "MAGNOLIA",
+                    "address": "2801 34TH AV W",
+                    "label": "Magnolia"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.362744475846, 47.7230041734274]
+                },
+                "properties": {
+                    "OBJECTID": 4,
+                    "name": "QUEEN ANNE",
+                    "address": "400 W GARFIELD ST",
+                    "label": "Queen Anne"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.348399923651, 47.6500678948937]
+                
+                },
+                "properties": {
+                    "OBJECTID": 5,
+                    "name": "FREMONT",
+                    "address": "731 N 35TH ST",
+                    "label": "Fremont"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.326716739666, 47.6815007844833]
+                
+                },
+                "properties": {
+                    "OBJECTID": 6,
+                    "name": "GREEN LAKE",
+                    "address": "7364 E GREEN LAKE DR N",
+                    "label": "Green Lake"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.354964535598, 47.6874970562586]
+                
+                },
+                "properties": {
+                    "OBJECTID": 7,
+                    "name": "GREENWOOD",
+                    "address": "8016 GREENWOOD AV N",
+                    "label": "Greenwood"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.317868191895, 47.6652361899239]
+                
+                },
+                "properties": {
+                    "OBJECTID": 8,
+                    "name": "UNIVERSITY",
+                    "address": "5009 ROOSEVELT WY NE",
+                    "label": "University"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.290014064851, 47.6126741851108]
+                
+                },
+                "properties": {
+                    "OBJECTID": 9,
+                    "name": "MADRONA-SALLY GOLDMARK",
+                    "address": "1134 33RD AV",
+                    "label": "Madrona-Sally Goldmark"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.302393902757, 47.6405657184819]
+                
+                },
+                "properties": {
+                    "OBJECTID": 10,
+                    "name": "MONTLAKE",
+                    "address": "2401 24TH AV E",
+                    "label": "Montlake"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.290711288702, 47.6778536840027]
+                
+                },
+                "properties": {
+                    "OBJECTID": 11,
+                    "name": "NORTHEAST",
+                    "address": "6801 35TH AV NE",
+                    "label": "Northeast"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.376182399068, 47.5224417730778]
+                
+                },
+                "properties": {
+                    "OBJECTID": 12, 
+                    "name": "SOUTHWEST",
+                    "address": "9010 35TH AV SW",
+                    "label": "Southwest"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.384757452724, 47.5826948361101]
+                
+                },
+                "properties": {
+                    "OBJECTID": 13, 
+                    "name": "WEST SEATTLE",
+                    "address": "2306 42ND AV SW",
+                    "label": "West Seattle"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.311407090967, 47.578045899061]
+                
+                },
+                "properties": {
+                    "OBJECTID": 14, 
+                    "name": "BEACON HILL",
+                    "address": "2821 BEACON AV S",
+                    "label": "Beacon Hill"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.286879244797, 47.5599471687359]
+                
+                },
+                "properties": {
+                    "OBJECTID": 15,
+                    "name": "COLUMBIA",
+                    "address": "4721 RAINIER AV S",
+                    "label": "Columbia"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.27046511644, 47.5213562310506]
+                
+                },
+                "properties": {
+                    "OBJECTID": 16,
+                    "name": "RAINIER BEACH",
+                    "address": "9125 RAINIER AV S",
+                    "label": "Rainier Beach"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.336823478051, 47.6166799315974]
+                
+                },
+                "properties": {
+                    "OBJECTID": 17,
+                    "name": "TALKING BOOK & BRAILLE",
+                    "address": "2021 9TH AV",
+                    "label": "Talking Book & Braille"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.339104421204, 47.661173686016]
+                
+                },
+                "properties": {
+                    "OBJECTID": 18,
+                    "name": "WALLINGFORD",
+                    "address": "1501 N 45TH ST",
+                    "label": "Wallingford"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.301831580483, 47.6019032112493]
+                
+                },
+                "properties": {
+                    "OBJECTID": 19,
+                    "name": "DOUGLASS-TRUTH",
+                    "address": "2300 E YESLER WAY",
+                    "label": "Douglass-Truth"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.322451451691, 47.6229139792733]
+                
+                },
+                "properties": {
+                    "OBJECTID": 20,
+                    "name": "CAPITOL HILL",
+                    "address": "425 HARVARD AV E",
+                    "label": "Capitol Hill"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.290951178993, 47.5389938028283]
+                
+                },
+                "properties": {
+                    "OBJECTID": 21,
+                    "name": "NEWHOLLY",
+                    "address": "7058 32ND AV S",
+                    "label": "NewHolly"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.375813894142, 47.5480415683761]
+                
+                },
+                "properties": {
+                    "OBJECTID": 22,
+                    "name": "HIGH POINT",
+                    "address": "3411 SW RAYMOND ST",
+                    "label": "High Point"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.332968268869, 47.6064852814312]
+                
+                },
+                "properties": {
+                    "OBJECTID": 23,
+                    "name": "CENTRAL",
+                    "address": "1000 4TH AVE",
+                    "label": "Central"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.363318628013, 47.553047395711]
+                
+                },
+                "properties": {
+                    "OBJECTID": 24,
+                    "name": "DELRIDGE",
+                    "address": "5423 DELRIDGE WAY SW",
+                    "label": "Delridge"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.322677488722, 47.7061932792133]
+                
+                },
+                "properties": {
+                    "OBJECTID": 25,
+                    "name": "NORTHGATE",
+                    "address": "10548 5TH AV NE",
+                    "label": "Northgate"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.33702477927, 47.6168038744594]
+                
+                },
+                "properties": {
+                    "OBJECTID": 26,
+                    "name": "MOBILE SERVICES",
+                    "address": "2025 9TH AV",
+                    "label": "N/A"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.322834230785, 47.5962491239783]
+                
+                },
+                "properties": {
+                    "OBJECTID": 27, 
+                    "name": "INTL. DISTRICT / CHINATOWN",
+                    "address": "713 8TH AV S",
+                    "label": "Intl District / Chinatown"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.384203803541, 47.6698432030019]
+                
+                },
+                "properties": {
+                    "OBJECTID": 28,
+                    "name": "BALLARD",
+                    "address": "5614 22ND AV NW",
+                    "label": "Ballard"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-122.322591182375, 47.5262651631218]
+                
+                },
+                "properties": {
+                    "OBJECTID": 29,
+                    "name": "SOUTH PARK",
+                    "address": "8604 8TH AV S",
+                    "address": "South Park"
+                }
+              }
+          ]
+      }
+
+
