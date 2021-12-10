@@ -1,6 +1,6 @@
 # <h1>Seattle Public Libraries</h1>
 
-[Link to project](Manhongg.github.io/geog495_final_project/index.html)
+[Link to project](https://manhongg.github.io/geog495_final_project/)
 
 <h2>Project Description</h2>
 
@@ -27,8 +27,6 @@ This function creates the sidebar display detailing all public libraries and the
 <img width="1177" alt="web_application" src="https://user-images.githubusercontent.com/43800949/145516935-387662e1-e8f8-44d1-8455-ab616761e10e.png">
 
 Link to dataset: https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::seattle-public-libraries/about
-
-![image](https://user-images.githubusercontent.com/43800949/145508673-56390f3f-965b-4e40-955d-4c56d6158d0c.png)
 
 <h2>Data Sources and Acknowledgements</h2>
 
