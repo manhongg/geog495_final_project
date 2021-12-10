@@ -213,7 +213,7 @@
         });
 
         async function geojsonFetch() {
-            let response = await fetch('assets/data.geojson');
+            let response = await fetch('data.geojson');
             let libraries = await response.json();
             
             libraries.features.forEach(function (library, i) {
