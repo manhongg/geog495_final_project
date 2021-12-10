@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Seattle Public libraries Locations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
       rel="stylesheet"
@@ -192,6 +192,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="sidebar">
       <div class="heading">
@@ -200,52 +201,50 @@
       <div id="listings" class="listings"></div>
     </div>
     <div id="map" class="map"></div>
+    
     <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoibWFuaG9uZ2dhbiIsImEiOiJja3ZjcjBmeXAzenh1Mm5xMTh2MW5qendzIn0.c9ETuMEeOWwmxycFH8DLEw';
-
-      const map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
-        center: [-122.335167, 47.608013],
-        zoom: 13,
-        scrollZoom: true
-      });
-
-      async function geojsonFetch() {
-            let response = await fetch('assets/data.geojson');
-            let libraries = await response.json();
-        libraries.features.forEach(function (library, i) {
-            library.properties.id = i;
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFuaG9uZ2dhbiIsImEiOiJja3ZjcjBmeXAzenh1Mm5xMTh2MW5qendzIn0.c9ETuMEeOWwmxycFH8DLEw';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/light-v10',
+            center: [-122.335167, 47.608013],
+            zoom: 13,
+            scrollZoom: true
         });
 
-        map.on('load', () => {
-
-            map.addSource('data', {
-            'type': 'geojson',
-            'data': data
+        async function geojsonFetch() {
+            let response = await fetch('assets/data.geojson');
+            let libraries = await response.json();
+            
+            libraries.features.forEach(function (library, i) {
+                library.properties.id = i;
             });
 
-            const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl,
-            marker: true,
-            bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
-            });
-            buildLocationList(libraries);
-            map.addControl(geocoder, 'top-left');
-            addMarkers();
-            geocoder.on('result', (event) => {
-            const searchResult = event.result.geometry;
-
-            const options = { units: 'miles' };
-            for (const library of libraries.features) {
-                library.properties.distance = turf.distance(
-                searchResult,
-                library.geometry,
-                options
-                );
-            }
-/**
+            map.on('load', function loadingData() {
+                map.addSource('libraries', {
+                    'type': 'geojson',
+                    'data': libraries
+                });
+                const geocoder = new MapboxGeocoder({
+                    accessToken: mapboxgl.accessToken,
+                    mapboxgl: mapboxgl,
+                    marker: true,
+                    bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
+                });
+                buildLocationList(libraries);
+                map.addControl(geocoder, 'top-left');
+                addMarkers();
+                geocoder.on('result', (event) => {
+                const searchResult = event.result.geometry;
+                const options = { units: 'miles' };
+                for (const library of libraries.features) {
+                    library.properties.distance = turf.distance(
+                    searchResult,
+                    library.geometry,
+                    options
+                    );
+                }
+    
             libraries.features.sort((a, b) => {
                 if (a.properties.distance > b.properties.distance) {
                 return 1;
@@ -255,19 +254,16 @@
                 }
                 return 0; // a must be equal to b
             });
-**/
             const listings = document.getElementById('listings');
             while (listings.firstChild) {
                 listings.removeChild(listings.firstChild);
             }
             buildLocationList(libraries);
             createPopUp(libraries.features[0]);
-
             const activeListing = document.getElementById(
                 `listing-${libraries.features[0].properties.id}`
             );
             activeListing.classList.add('active');
-
             const bbox = getBbox(libraries, 0, searchResult);
             map.fitBounds(bbox, {
                 padding: 100
@@ -275,10 +271,10 @@
             });
         });
 
-        function getBbox(sortedLibraries, storeIdentifier, searchResult) {
+        function getBbox(sortedLibraries, libraryIdentifier, searchResult) {
             const lats = [
             sortedLibraries.features[libraryIdentifier].geometry.coordinates[1],
-            searchResult.coordinates[1]
+            searchResult.coordinates[0]
             ];
             const lons = [
             sortedLibraries.features[libraryIdentifier].geometry.coordinates[0],
@@ -324,11 +320,9 @@
                 const activeItem = document.getElementsByClassName('active');
                 e.stopPropagation();
                 if (activeItem[0]) {
-                activeItem[0].classList.remove('active');
+                    activeItem[0].classList.remove('active');
                 }
-                const listing = document.getElementById(
-                `listing-${marker.properties.id}`
-                );
+                const listing = document.getElementById(`listing-${marker.properties.id}`);
                 listing.classList.add('active');
             });
             }
@@ -340,7 +334,6 @@
             const listing = listings.appendChild(document.createElement('div'));
             listing.id = `listing-${library.properties.id}`;
             listing.className = 'item';
-
             const link = listing.appendChild(document.createElement('a'));
             link.href = '#';
             link.className = 'title';
@@ -375,8 +368,8 @@
                 }
                 this.parentNode.classList.add('active');
             });
-            }
         }
+        
 
         function flyToLibrary(currentFeature) {
             map.flyTo({

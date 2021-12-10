@@ -210,8 +210,6 @@
       
       const libraries = {
           'type': 'featureCollection',
-
-
           'features': [
               {
                 'type': 'Feature',
@@ -618,221 +616,167 @@
                 }
               }
           ]
-      };
+      }
 
       libraries.features.forEach((library, i) => {
-        library.properties.OBJECTID = i;
+        library.properties.id = i;
       });
 
-      map.on('load', () => {
-        map.addSource('places', {
-          'type': 'geojson',
-          'data': libraries
-        });
+      map.on('load', function loadData() {
 
-  
-       /** const geocoder = new MapboxGeocoder({
-          accessToken: mapboxgl.accessToken,
-          mapboxgl: mapboxgl,
-          marker: true,
-          bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
-        });
-**/
-        buildLocationList(libraries);
-        //map.addControl(geocoder, 'top-left');
-        addMarkers();
+map.addSource('libraries', {
+    'type': 'geojson',
+    'data': libraries
+});
 
-\
-     /**   geocoder.on('result', (event) => {
-          /* Get the coordinate of the search result */
-          const searchResult = event.result.geometry;
+const geocoder = new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl,
+marker: true,
+bbox: [-77.210763, 38.803367, -76.853675, 39.052643]
+});
+buildLocationList(libraries);
+map.addControl(geocoder, 'top-left');
+addMarkers();
+geocoder.on('result', (event) => {
+const searchResult = event.result.geometry;
 
-          /**
-           * Calculate distances:
-           * For each store, use turf.disance to calculate the distance
-           * in miles between the searchResult and the store. Assign the
-           * calculated value to a property called `distance`.
-           */
-        /**
-          const options = { units: 'miles' };
-          for (const store of stores.features) {
-            store.properties.distance = turf.distance(
-              searchResult,
-              store.geometry,
-              options
-            );
-          }
+const options = { units: 'miles' };
+for (const library of libraries.features) {
+    library.properties.distance = turf.distance(
+    searchResult,
+    library.geometry,
+    options
+    );
+}
 
-          /**
-           * Sort stores by distance from closest to the `searchResult`
-           * to furthest.
-           */
-          /**
-          stores.features.sort((a, b) => {
-            if (a.properties.distance > b.properties.distance) {
-              return 1;
-            }
-            if (a.properties.distance < b.properties.distance) {
-              return -1;
-            }
-            return 0; // a must be equal to b
-          });
+const listings = document.getElementById('listings');
+while (listings.firstChild) {
+listings.removeChild(listings.firstChild);
+}
+buildLocationList(libraries);
+createPopUp(libraries.features[0]);
 
-          /**
-           * Rebuild the listings:
-           * Remove the existing listings and build the location
-           * list again using the newly sorted stores.
-           */
-          /**
-          const listings = document.getElementById('listings');
-          while (listings.firstChild) {
-            listings.removeChild(listings.firstChild);
-          }
-          buildLocationList(stores);
+const activeListing = document.getElementById(
+`listing-${libraries.features[0].properties.id}`
+);
+activeListing.classList.add('active');
 
-          /* Open a popup for the closest store. */
-          /**
-          createPopUp(stores.features[0]);
+const bbox = getBbox(libraries, 0, searchResult);
+map.fitBounds(bbox, {
+padding: 100
+});
+});
+});
 
-          /** Highlight the listing for the closest store. */
-          /**
-          const activeListing = document.getElementById(
-            `listing-${stores.features[0].properties.id}`
-          );
-          activeListing.classList.add('active');
+function getBbox(sortedLibraries, storeIdentifier, searchResult) {
+const lats = [
+sortedLibraries.features[libraryIdentifier].geometry.coordinates[1],
+searchResult.coordinates[1]
+];
+const lons = [
+sortedLibraries.features[libraryIdentifier].geometry.coordinates[0],
+searchResult.coordinates[0]
+];
+const sortedLons = lons.sort((a, b) => {
+if (a > b) {
+return 1;
+}
+if (a.distance < b.distance) {
+return -1;
+}
+return 0;
+});
+const sortedLats = lats.sort((a, b) => {
+if (a > b) {
+return 1;
+}
+if (a.distance < b.distance) {
+return -1;
+}
+return 0;
+});
+return [
+[sortedLons[0], sortedLats[0]],
+[sortedLons[1], sortedLats[1]]
+];
+}
 
-          /**
-           * Adjust the map camera:
-           * Get a bbox that contains both the geocoder result and
-           * the closest store. Fit the bounds to that bbox.
-           */
-          /**
-          const bbox = getBbox(stores, 0, searchResult);
-          map.fitBounds(bbox, {
-            padding: 100
-          });
-        });
-      });
+function addMarkers() {
+for (const marker of libraries.features) {
+const el = document.createElement('div');
+el.id = `marker-${marker.properties.id}`;
+el.className = 'marker';
 
-      /**
-       * Using the coordinates (lng, lat) for
-       * (1) the search result and
-       * (2) the closest store
-       * construct a bbox that will contain both points
-       */
-      /**
-      function getBbox(sortedStores, storeIdentifier, searchResult) {
-        const lats = [
-          sortedStores.features[storeIdentifier].geometry.coordinates[1],
-          searchResult.coordinates[1]
-        ];
-        const lons = [
-          sortedStores.features[storeIdentifier].geometry.coordinates[0],
-          searchResult.coordinates[0]
-        ];
-        const sortedLons = lons.sort((a, b) => {
-          if (a > b) {
-            return 1;
-          }
-          if (a.distance < b.distance) {
-            return -1;
-          }
-          return 0;
-        });
-        const sortedLats = lats.sort((a, b) => {
-          if (a > b) {
-            return 1;
-          }
-          if (a.distance < b.distance) {
-            return -1;
-          }
-          return 0;
-        });
-        return [
-          [sortedLons[0], sortedLats[0]],
-          [sortedLons[1], sortedLats[1]]
-        ];
-      }
-    **/
+new mapboxgl.Marker(el, { offset: [0, -23] })
+.setLngLat(marker.geometry.coordinates)
+.addTo(map);
 
-      function addMarkers() {
-        /* For each feature in the GeoJSON object above: */
-        for (const marker of libraries.features) {
-          const el = document.createElement('div');
-          el.id = `marker-${marker.properties.OBJECTID}`;
-          el.className = 'marker';
+el.addEventListener('click', (e) => {
+flyToLibrary(marker);
+createPopUp(marker);
+const activeItem = document.getElementsByClassName('active');
+e.stopPropagation();
+if (activeItem[0]) {
+activeItem[0].classList.remove('active');
+}
+const listing = document.getElementById(
+`listing-${marker.properties.id}`
+);
+listing.classList.add('active');
+});
+}
+}
 
-          new mapboxgl.Marker(el, { offset: [0, -23] })
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
+function buildLocationList(libraries) {
+for (const library of libraries.features) {
+const listings = document.getElementById('listings');
+const listing = listings.appendChild(document.createElement('div'));
+listing.id = `listing-${library.properties.id}`;
+listing.className = 'item';
 
-          el.addEventListener('click', (e) => {
-            flyToStore(marker);
-            createPopUp(marker);
-            const activeItem = document.getElementsByClassName('active');
-            e.stopPropagation();
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            const listing = document.getElementById(
-              `listing-${marker.properties.OBJECTID}`
-            );
-            listing.classList.add('active');
-          });
-        }
-      }
+const link = listing.appendChild(document.createElement('a'));
+link.href = '#';
+link.className = 'title';
+link.id = `link-${library.properties.id}`;
+link.innerHTML = `${library.properties.address}`;
 
-      function buildLocationList(libraries) {
-        for (const library of libraries.features) {
-          const listings = document.getElementById('listings');
-          const listing = listings.appendChild(document.createElement('div'));
-          listing.id = `listing-${library.properties.OBJECTID}`;
-          listing.className = 'item';
+const details = listing.appendChild(document.createElement('div'));
+details.innerHTML = `${library.properties.label}`;
 
-          const link = listing.appendChild(document.createElement('a'));
-          link.href = '#';
-          link.className = 'title';
-          link.id = `link-${library.properties.OBJECTID}`;
-          link.innerHTML = `${library.properties.address}`;
+link.addEventListener('click', function () {
+for (const feature of libraries.features) {
+if (this.id === `link-${feature.properties.id}`) {
+    flyToLibrary(feature);
+    createPopUp(feature);
+}
+}
+const activeItem = document.getElementsByClassName('active');
+if (activeItem[0]) {
+activeItem[0].classList.remove('active');
+}
+this.parentNode.classList.add('active');
+});
+}
+}
 
-          /* Add details to the individual listing. */
-          const details = listing.appendChild(document.createElement('div'));
-          details.innerHTML = `${library.properties.label}`;
+function flyToLibrary(currentFeature) {
+map.flyTo({
+center: currentFeature.geometry.coordinates,
+zoom: 15
+});
+}
 
+function createPopUp(currentFeature) {
+const popUps = document.getElementsByClassName('mapboxgl-popup');
+if (popUps[0]) popUps[0].remove();
+const popup = new mapboxgl.Popup({ closeOnClick: true })
+.setLngLat(currentFeature.geometry.coordinates)
+.setHTML(
+`<h3>Seattle Public library</h3><h4>${currentFeature.properties.address}</h4>`
+)
+.addTo(map);
 
-          link.addEventListener('click', function () {
-            for (const feature of libraries.features) {
-              if (this.id === `link-${feature.properties.OBJECTID}`) {
-                flyToStore(feature);
-                createPopUp(feature);
-              }
-            }
-            const activeItem = document.getElementsByClassName('active');
-            if (activeItem[0]) {
-              activeItem[0].classList.remove('active');
-            }
-            this.parentNode.classList.add('active');
-          });
-        }
-      }
-
-      function flyToStore(currentFeature) {
-        map.flyTo({
-          center: currentFeature.geometry.coordinates,
-          zoom: 15
-        });
-      }
-
-      function createPopUp(currentFeature) {
-        const popUps = document.getElementsByClassName('mapboxgl-popup');
-        if (popUps[0]) popUps[0].remove();
-        const popup = new mapboxgl.Popup({ closeOnClick: false })
-          .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML(
-            `<h3>Seattle Public Libraries</h3><h4>${currentFeature.properties.address}</h4>`
-          )
-          .addTo(map);
-        }
     </script>
   </body>
 
